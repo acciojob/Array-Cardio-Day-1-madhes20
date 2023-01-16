@@ -91,7 +91,7 @@ export function sortbylived() {
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
     const res = people.sort(function(a,b){
-        return a.split(', ')[0]>b.split(', ')[0] ? 1: -1;
+        return a.split(', ')[1]>b.split(', ')[1] ? 1: -1;
     })
 }
 
@@ -101,8 +101,9 @@ const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bik
 
 export function reducedSum() {
     // Return an object containing transports as key and its number of occurances as the key's value
-    let res = [];
+let res = [];
     data.forEach(function(elem){
         res[elem] = res[elem]? res[elem]+1 : 1;
-    }
+    });
+return res;
 }
