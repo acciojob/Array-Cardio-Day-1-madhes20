@@ -46,9 +46,9 @@ export function map() {
     let fullName = [];
     let len = inventors.length;
     for(let i=0; i<len; i++){
-        let f_name = inventors.first;
-        let l_name = inventors.last;
-        let full_name = f_name + l_name;
+        let f_name = inventors[i].first;
+        let l_name = inventors[i].last;
+        let full_name = f_name + " " + l_name;
         fullName.push(full_name);
     }
     return fullName;
@@ -69,13 +69,13 @@ export function sort() {
 // 4. How many years did all the inventors live?
 // Return the total number of years all the inventors lived
 export function reduce() {
-    let total_year = [];
+    let total_year = 0;
     let len = inventors.length;
     for(let i=0; i<len; i++){
         let born_year = inventors[i].year;
         let passed_year = inventors[i].passed;
         let lived_year = passed_year - born_year;
-        total_year.push(lived_year);
+        total_year = total_year + lived_year;
     }
     return total_year;
 }
